@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/layout/header";
 import Todos from "./components/Todos";
 import AddTodo from "./components/AddTodo";
+import About from "./components/pages/about";
 import uuid from "uuid";
 import "./App.css";
 
@@ -63,6 +64,7 @@ class App extends Component {
           <div className="container">
             <Header />
             <Route
+              exact
               path="/"
               render={props => (
                 <React.Fragment>
@@ -75,6 +77,7 @@ class App extends Component {
                 </React.Fragment>
               )}
             />
+            <Route path="/about" component={About} />
           </div>
         </div>
       </Router>
